@@ -13,7 +13,10 @@ def main():
     log_list = [s.split(" ")[0] for s in res.split("\n") if len(s) > 1]  # log is only commit hash. avoid last new line
 
     # do command for each commit
-    command()
+    for commit in log_list:
+        print("commit = {0}".format(commit))
+        subprocess.call(["git", "reset", "--hard", commit])
+        command()
 
 
 def command():
