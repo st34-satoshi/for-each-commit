@@ -11,6 +11,7 @@ def main():
     res_b = subprocess.check_output(["git", "log", "--pretty=oneline"])
     res = str(res_b.decode())
     log_list = [s.split(" ")[0] for s in res.split("\n") if len(s) > 1]  # log is only commit hash. avoid last new line
+    log_list.reverse()
 
     # do command for each commit
     for commit in log_list:
