@@ -1,13 +1,19 @@
 import subprocess
+import sys
 
 
 def main():
+    # get path
+    path_dir = "./"
+    if len(sys.argv) < 2:
+        print("Error: no path to directory")
+    else:
+        path_dir = sys.argv[1]
+
     # TODO: if you want to change a branch.
     # # checkout new branch. not to break commit
     # subprocess.call(["git", "checkout", "for-each-commit"])
     # subprocess.call(["git", "checkout", "-b", "for-each-commit"])
-
-    path_dir = ""
 
     # create log list. the list has only commit hash
     res_b = subprocess.check_output(["git", "-C", path_dir, "log", "--pretty=oneline"])
