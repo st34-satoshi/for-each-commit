@@ -3,9 +3,10 @@ you can create gif **call-graph** animation.
 ![](./graph/call-aimation.gif)
 
 ## Prepare
-- go
-- python
-- graphvis
+- [Go](https://golang.org/)
+- [Python3](https://www.python.org/)
+- [Graphvis](https://www.graphviz.org/)
+- [ImageMagick](https://imagemagick.org/index.php)
 
 ## Usage
 ### 0. clean graph directory
