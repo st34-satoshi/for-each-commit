@@ -26,24 +26,13 @@ def main():
     for i, commit in enumerate(log_list):
         print("commit = {0}".format(commit))
         subprocess.call(["git", "-C", path_dir, "reset", "--hard", commit])
-        command(path_dir)
+        command(path_dir, i)
 
 
-def command(path_dir):
+def command(path_dir, index):
     # TODO implement: this is a example. implement a function what you want
-    # output number of all files line
-    # get files
-    files = subprocess.check_output(["git", "-C", path_dir, "ls-files"]).decode()
-    file_list = [s for s in files.split("\n") if len(s) > 1]
-    total_line = 0
-    for file in file_list:
-        # add line number of this file.
-        result_wc = subprocess.check_output(["wc", path_dir + file]).decode().split(' ')
-        for s in result_wc:
-            if len(s) > 0:
-                total_line += int(s)
-                break
-    print(total_line)
+    # make call graph
+    subprocess.call(["go", "run", "main.go", path_dir, str(index)])
 
 
 if __name__ == '__main__':
