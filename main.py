@@ -7,6 +7,7 @@ def main():
     path_dir = "./"
     if len(sys.argv) < 2:
         print("Error: no path to directory")
+        exit()
     else:
         path_dir = sys.argv[1]
 
@@ -18,11 +19,8 @@ def main():
     # create log list. the list has only commit hash
     res_b = subprocess.check_output(["git", "-C", path_dir, "log", "--pretty=oneline"])
     res = str(res_b.decode())
-    log_list = [s.split(" ")[0] for s in res.split("\n") if len(s) > 1]  # log is only commit hash. avoid last new line
-    print(log_list)
-    print(len(log_list))
-    exit()
-    log_list.reverse()
+    log_list = [s.split(" ")[0] for s in res.split("\n") if len(s) > 1]  # log is only commit hash. avoid commit comment
+    log_list.reverse()  # from initial commit
 
     # do command for each commit
     for i, commit in enumerate(log_list):
