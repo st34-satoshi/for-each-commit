@@ -1,5 +1,6 @@
 # for-each-commit
-you can create gif **call-graph** animation.
+you can create gif **call-graph** animation.  
+![](./graph/call-aimation.gif)
 
 ## Prepare
 - go
