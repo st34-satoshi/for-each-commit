@@ -7,7 +7,7 @@ I used [bxcodec/go-clean-arch](https://github.com/bxcodec/go-clean-arch) program
 ## Prepare
 - [Go](https://golang.org/)
 - [Python3](https://www.python.org/)
-- [Graphvis](https://www.graphviz.org/)
+- [Graphviz](https://www.graphviz.org/)
 - [ImageMagick](https://imagemagick.org/index.php)
 
 ## Usage
